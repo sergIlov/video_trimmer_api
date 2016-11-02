@@ -11,7 +11,8 @@ class Task
   belongs_to :user
   belongs_to :video
 
-  validates :end_time, numericality: { greater_than: 0 }
+  validates :start_time, numericality: { greater_than_or_equal_to: 0 }
+  validates :end_time, presence: true, numericality: { greater_than: proc { |task| task.start_time || 0 } }
 
   default_scope proc { order(created_at: :desc) }
 
