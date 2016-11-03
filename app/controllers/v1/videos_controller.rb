@@ -6,11 +6,11 @@ class V1::VideosController < ApplicationController
   end
   
   def create
-    video = current_user.videos.build(params.permit(:file))
-    if video.save
-      redirect_to video_path(video)
+    @video = current_user.videos.build(params.permit(:file))
+    if @video.save
+      redirect_to video_path(@video)
     else
-      render_validation_errors video.errors
+      render_validation_errors @video.errors
     end
   end
   

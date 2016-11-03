@@ -4,8 +4,8 @@ class Video
 
   field :file
 
-  belongs_to :user
-  has_many :tasks
+  belongs_to :user, inverse_of: :videos
+  has_many :tasks, inverse_of: :task
 
   validates :file, presence: true
 

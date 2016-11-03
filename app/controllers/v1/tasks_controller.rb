@@ -6,11 +6,11 @@ class V1::TasksController < ApplicationController
   end
   
   def create
-    task = current_user.tasks.build(params.permit(:start_time, :end_time, :video_id))
-    if task.save
-      redirect_to task_path(task)
+    @task = current_user.tasks.build(params.permit(:start_time, :end_time, :video_id))
+    if @task.save
+      redirect_to task_path(@task)
     else
-      render_validation_errors(task.errors)
+      render_validation_errors(@task.errors)
     end
   end
   

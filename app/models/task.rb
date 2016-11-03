@@ -8,8 +8,8 @@ class Task
   field :end_time, type: Integer, default: 0
   field :state
 
-  belongs_to :user
-  belongs_to :video
+  belongs_to :user, inverse_of: :tasks
+  belongs_to :video, inverse_of: :tasks
 
   validates :start_time, numericality: { greater_than_or_equal_to: 0 }
   validates :end_time, presence: true, numericality: { greater_than: proc { |task| task.start_time || 0 } }
