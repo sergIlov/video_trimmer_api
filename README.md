@@ -16,11 +16,11 @@ ___
 
 **Response:**
 
- ```
- { 
-   token: 'user token'  
- }
- ```
+```
+{ 
+  token: 'user token'  
+}
+```
 ___
 
 #### Original videos list
@@ -51,26 +51,26 @@ ___
 
 **Response:**
 
- ```
- { 
-   id: 'video id',  
-   url: 'link to original video'
-   created_at: 'create time'
- }
- ```
+```
+{ 
+  id: 'video id',  
+  url: 'link to original video'
+  created_at: 'create time'
+}
+```
 
 #### Show video
 **GET** `/v1/videos/:video_id`
 
 **Response:**
 
- ```
- { 
-   id: 'video id',  
-   url: 'link to original video'
-   created_at: 'create time'
- }
- ```
+```
+{ 
+  id: 'video id',  
+  url: 'link to original video'
+  created_at: 'create time'
+}
+```
 ___
  
 #### Show tasks list
@@ -115,14 +115,14 @@ ___
 }
 ```
  
- #### Show task
+#### Show task
  **GET** `/v1/tasks/:task_id`
  
  **Response:**
  
 ```
 { 
-  id: 'video id',  
+  id: 'task id',  
   created_at: 'create time'
   url: 'url to trimmed video'
   duration: 'trimmed video duration'
@@ -137,7 +137,7 @@ ___
  
 ```
 { 
-  id: 'video id',  
+  id: 'task id',  
   created_at: 'create time'
   url: 'url to trimmed video'
   duration: 'trimmed video duration'
@@ -152,6 +152,3 @@ ___
 + processing
 + failed
 + done
-
-
-
