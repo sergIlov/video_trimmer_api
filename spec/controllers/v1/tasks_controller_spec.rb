@@ -59,7 +59,7 @@ RSpec.describe V1::TasksController, type: :controller do
       it 'renders correct json' do
         parsed_response = JSON.parse(response.body)
         expect(parsed_response.size).to be(2)
-        expect(parsed_response.first.keys).to eq(%w(id created_at original_video_id duration state))
+        expect(parsed_response.first.keys).to eq(%w(id created_at url duration state))
       end
     end
 
@@ -78,7 +78,7 @@ RSpec.describe V1::TasksController, type: :controller do
     
         it 'renders correct json' do
           parsed_response = JSON.parse(response.body)
-          expect(parsed_response.keys).to eq(%w(id created_at original_video_id duration state))
+          expect(parsed_response.keys).to eq(%w(id created_at url duration state))
         end
       end
   
